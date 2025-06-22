@@ -183,14 +183,17 @@ export class HomeComponent {
 
   //add favorite
   addFavorite(data?:any){
-    console.log('data fav', data)
+    console.log('data fav', data);
     this.allApi.addFavorite(this.allApi.favoriteUrl + '/' + data.id, '').subscribe(
       (data:any) =>{
         console.log('added favorite', data);
         this.favorited = true;
-        this.getAllProduct()
+        
+        setTimeout(() => {
+          this.getAllProduct();
+        }, 300)
       }
-    )
+    );
   }
 
 

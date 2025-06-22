@@ -5,6 +5,7 @@ import { MainComponent } from './layouts/main/main.component';
 import { DetialProductComponent } from './detial-product/detial-product.component';
 import { ViewMoreComponent } from './view-more/view-more.component';
 import { CheckoutsComponent } from './checkouts/checkouts.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
         path: 'checkouts', 
         canActivate : [],
         component : CheckoutsComponent, 
+      },
+      {
+        path: 'payment', 
+        canActivate : [],
+        component : PaymentComponent, 
       },
     ]  
   }

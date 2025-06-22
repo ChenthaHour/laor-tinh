@@ -33,6 +33,11 @@ export class HeaderComponent implements OnInit {
     cateList: any;
 
     inputGroup = new FormGroup({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', Validators.required)
+    })
+
+    inputGroup1 = new FormGroup({
         name: new FormControl('', Validators.required),
         email: new FormControl('', Validators.required),
         password: new FormControl('', Validators.required),
@@ -67,6 +72,10 @@ export class HeaderComponent implements OnInit {
 
     get f() {
         return this.inputGroup.controls
+    }
+
+    get f1() {
+        return this.inputGroup1.controls
     }
 
 
@@ -137,6 +146,7 @@ export class HeaderComponent implements OnInit {
             },
             err => {
                 this.checkAfterLogin = true;
+                this.ToastrService.typeFailedLogint();
                 console.error('Login error:', err);
             }
         );
@@ -146,11 +156,11 @@ export class HeaderComponent implements OnInit {
     signup() {
         this.checkAfterLogin = true;
         let inputData = {
-            "name": this.f.name.value,
-            "email": this.f.email.value,
-            "password": this.f.password.value,
-            "confirmationPassword": this.f.confirmationPassword.value,
-            "gender": this.f.gender.value
+            "name": this.f1.name.value,
+            "email": this.f1.email.value,
+            "password": this.f1.password.value,
+            "confirmationPassword": this.f1.confirmationPassword.value,
+            "gender": this.f1.gender.value
         }
 
         const credentials = btoa(`${environment.Username}:${environment.Password}`);

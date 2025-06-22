@@ -17,6 +17,10 @@ export class NGXToastrService {
         this.toastr.success("Login Successfully");
     }
 
+    typeFailedLogint() {
+        this.toastr.error("Login Failed");
+    }
+
     typeSuccessRegister() {
         this.toastr.success("Register successfully");
     }

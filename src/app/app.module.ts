@@ -54,6 +54,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { FavoriteFormComponent } from './favorite-form/favorite-form.component';
 import { NotificationComponent } from './notification/notification.component';
 import { FilterProductComponent } from './filter-product/filter-product.component';
+import { PaymentComponent } from './payment/payment.component';
 // import {} from 'bakong-khqr'
 
 @NgModule({
@@ -75,7 +76,8 @@ import { FilterProductComponent } from './filter-product/filter-product.componen
     KhqrComponent,
     FavoriteFormComponent,
     NotificationComponent,
-    FilterProductComponent
+    FilterProductComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

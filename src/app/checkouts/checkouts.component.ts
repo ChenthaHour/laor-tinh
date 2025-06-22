@@ -207,10 +207,22 @@ export class CheckoutsComponent {
         console.log('data order success', data)
         // this.visible = true;
         // this.deleteCart(this.userId);
-        this.createPayment(data.data.id);
+        // this.createPayment(data.data.id);
+        this.gotoPage(data.data)
       }
     )
   }
+
+  gotoPage(data: any) {
+    console.log(data);
+    this.router.navigate(
+      ['payment'],
+      {
+        queryParams: { dataPayment: data.id },
+      },
+    );
+  }
+
 
 
   deleteCart(id: any) {
@@ -222,26 +234,26 @@ export class CheckoutsComponent {
   }
 
 
-  createPayment(id?:number){
-    this.allApi.createPayment(id).subscribe(
-      (data:any) => {
-        console.log('data sucess payment', data)
-        this.dataPayment = data;
-        // this.openFormKhqr('edit', data)
-        // this.generateKHQR()
-        this.verifyPayment(data.data.paymentId)
-      }
-    )
-  }
+  // createPayment(id?:number){
+  //   this.allApi.createPayment(id).subscribe(
+  //     (data:any) => {
+  //       console.log('data sucess payment', data)
+  //       this.dataPayment = data;
+  //       // this.openFormKhqr('edit', data)
+  //       // this.generateKHQR()
+  //       this.verifyPayment(data.data.paymentId)
+  //     }
+  //   )
+  // }
 
-  verifyPayment(id:number){
-    this.allApi.verifyPayment(this.allApi.verifyPaymentUrl , id).subscribe(
-      (data:any) =>{
-          console.log('payment success');
-          this.visible = true;
-      }
-    )
-  }
+  // verifyPayment(id:number){
+  //   this.allApi.verifyPayment(this.allApi.verifyPaymentUrl , id).subscribe(
+  //     (data:any) =>{
+  //         console.log('payment success');
+  //         this.visible = true;
+  //     }
+  //   )
+  // }
 
 
   generateKHQR() {

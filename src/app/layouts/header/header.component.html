@@ -100,13 +100,13 @@
                         </div>
 
                         <!-- Register Button -->
-                        <button type="submit" class="btn btn-dark mt-3 w-100" (click)="login()">
+                        <button type="submit" [disabled]="!inputGroup.valid" class="btn btn-dark mt-3 w-100" (click)="login()">
                             LOGIN
                         </button>
-                        <div *ngIf="checkAfterLogin === true" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                        <!-- <div *ngIf="checkAfterLogin === true" class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
                             <span style="font-size: 12px;">Login Failed! Please Try Again</span>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                        </div> -->
                         <div class="text-center text-gray-500 mt-2">OR</div>
                     </form>
 
@@ -134,7 +134,7 @@
         <p-tabPanel header="Register">
             <div class="flex flex-column">
                 <div>
-                    <form [formGroup]="inputGroup">
+                    <form [formGroup]="inputGroup1">
                         <!-- Gender -->
                         <div>
                             <label class="form-check-label me-2" for="inlineRadio3">Gender</label>

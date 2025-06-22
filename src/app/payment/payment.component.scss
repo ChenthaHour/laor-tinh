@@ -1,0 +1,129 @@
+.card-payment-wrapper, .payment-success {
+  max-width: 440px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 3.5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  form {
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        display: block;
+        color: #34495e;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        transition: all 0.2s;
+
+        &:focus {
+          border-color: #007bff;
+          background-color: #fff;
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+        }
+      }
+
+      .input-icon {
+        position: relative;
+
+        input {
+          padding-right: 48px;
+        }
+
+        .card-logo {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 36px;
+          height: auto;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1.25rem;
+
+      .form-group {
+        flex: 1;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, box-shadow 0.2s ease;
+      // box-shadow: 0 4px 14px rgba(26, 115, 232, 0.2);
+
+      &:hover {
+        background-color: #155cc0;
+        // box-shadow: 0 6px 18px rgba(21, 92, 192, 0.3);
+      }
+
+      &:disabled {
+        background-color: #ced4da;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .checkmark {
+    font-size: 4rem;
+    color: #28a745;
+    text-align: center;
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .payment-success {
+    text-align: center;
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #28a745;
+    }
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

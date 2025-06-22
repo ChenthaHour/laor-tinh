@@ -1,0 +1,42 @@
+<div class="card-payment-wrapper" *ngIf="!isSuccess">
+  <h2>Credit Card Payment</h2>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="createPayment()">
+    <div class="form-group">
+      <label>Cardholder Name</label>
+      <input formControlName="name" type="text" placeholder="John Doe" />
+    </div>
+
+    <div class="form-group">
+      <label>Card Number</label>
+      <div class="input-icon">
+        <input formControlName="cardNumber" type="text" placeholder="XXXX XXXX XXXX XXXX" />
+        <img src="../../assets/images/Visa_Logo.png" alt="Visa" class="card-logo" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input formControlName="expiry" type="text" placeholder="MM/YY" maxlength="5" />
+      </div>
+
+      <div class="form-group">
+        <label>CVV</label>
+        <input formControlName="cvv" type="password" placeholder="***" maxlength="3" />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loading || paymentForm.invalid">
+      {{ loading ? 'Processing...' : 'Pay Now' }}
+    </button>
+  </form>
+</div>
+
+<div class="payment-success" *ngIf="isSuccess">
+  <div class="checkmark">
+    <i class="fas fa-check-circle"></i>
+  </div>
+  <h3>Payment Successful!</h3>
+  <p>Thank you, {{ paymentForm.value.name }}!</p>
+</div>
